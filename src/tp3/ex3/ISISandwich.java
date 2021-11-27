@@ -1,8 +1,9 @@
 package tp3.ex3;
 
 public class ISISandwich {
-    private int price=200;
+    private int price = 200;
     private boolean ready = false;
+    private boolean isPaid = false;
 
     public int getPrice() {
         return price;
@@ -19,4 +20,13 @@ public class ISISandwich {
     public void setReady(boolean ready) {
         this.ready = ready;
     }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setIsPaid(boolean isPaid) {
+        this.isPaid = isPaid;
+    }
+
 }

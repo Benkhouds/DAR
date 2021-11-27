@@ -1,17 +1,21 @@
 package tp3.ex3;
 
-public class Student extends Thread{
-    private ISISandwich isiSandwich;
+public class Student extends Thread {
 
-    public Student(String s, ISISandwich isiSandwich) {
+    private Actions actions;
+
+    public Student(String s, Actions actions) {
         super(s);
-        this.isiSandwich = isiSandwich;
+        this.actions = actions;
     }
 
     @Override
     public void run() {
-        System.out.println("Student "+this.getName()+" is waiting for a sandwich");
-        //todo : wait for a sandwich until it's prepared
-        System.out.println("Student "+this.getName()+" got a sandwich");
+        try {
+            actions.studentAction(this.getName());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
     }
 }

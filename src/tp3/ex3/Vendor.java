@@ -1,22 +1,24 @@
 package tp3.ex3;
 
-public class Vendor extends Thread{
+public class Vendor extends Thread {
 
-    private ISISandwich isiSandwich;
+    private Actions actions;
 
-    public Vendor(String s, ISISandwich isiSandwich) {
+    public Vendor(String s, Actions actions) {
         super(s);
-        this.isiSandwich = isiSandwich;
+        this.actions = actions;
     }
 
     @Override
     public void run() {
         try {
             sleep(2000);
-                System.out.println("Vendor "+this.getName()+" said 'isi sandwich is ready'");
-                //todo : prepare a sandwich, set it as ready and notify a student
+            actions.vendorAction(this.getName());
+            actions.vendorAction(this.getName());
         } catch (InterruptedException e) {
+            this.interrupt();
             e.printStackTrace();
         }
+
     }
 }
