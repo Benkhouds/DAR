@@ -1,6 +1,6 @@
 package tp3.ex2;
 
-public class MyThread extends Thread{
+public class MyThread extends Thread {
     private MyCounter counter;
 
     public MyThread(MyCounter myCounter) {
@@ -9,7 +9,7 @@ public class MyThread extends Thread{
 
     @Override
     public void run() {
-        //todo: implement the methods and uncomment the lines below
+        // todo: implement the methods and uncomment the lines below
         StaticCounter.increment();
         counter.count();
     }
