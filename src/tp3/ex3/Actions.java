@@ -6,7 +6,7 @@ public class Actions extends ISISandwich {
 
     while (!this.isReady()) {
       System.out.println("Student " + name + " is waiting for a sandwich");
-      wait(1000);
+      wait();
     }
 
     System.out.println("Student " + name + " got a sandwich");

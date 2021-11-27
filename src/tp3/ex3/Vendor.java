@@ -14,7 +14,6 @@ public class Vendor extends Thread {
         try {
             sleep(2000);
             actions.vendorAction(this.getName());
-            actions.vendorAction(this.getName());
         } catch (InterruptedException e) {
             this.interrupt();
             e.printStackTrace();

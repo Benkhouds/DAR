@@ -9,6 +9,7 @@ public class Main {
         // first thread increments the count variable in Static counter
         // and then executes the count method of myCounter
         // after it finishes the second thread repeats the process
+        t1.start();
         try {
             t1.join();
         } catch (InterruptedException e) {
